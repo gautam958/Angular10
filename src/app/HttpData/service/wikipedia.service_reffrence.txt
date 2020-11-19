@@ -1,0 +1,58 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'; 
+import { Observable } from 'rxjs';
+import {pluck} from 'rxjs/operators';
+
+interface car{
+  year:number;
+  color:string;
+  running:boolean;
+  make:{
+    name:string;
+    dateCreated:number
+  }
+}
+
+const observable =new Observable<car>(observable =>{
+  observable.next({
+    year:2000,
+    color:'red',
+    running:true,
+    make{
+      name:'chevy',
+      dateCreated:1995
+    }
+  });
+}).pipe(
+pluck('make','name')
+);
+
+observable.subscribe(value => {
+  console.log(value);
+  // console return chevy
+});
+
+
+@Injectable({
+  providedIn: 'root',
+})
+export class WikipediaService {
+  // https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&utf8=1&srsearch=space
+  url: string = 'https://en.wikipedia.org/w/api.php';
+
+  constructor(private http: HttpClient) {}
+
+  public search(term: string) {
+    //console.log('I am the app and here is the term',term);
+    return this.http.get(this.url, {
+      params: {
+        action: 'query',
+        format: 'json',
+        list: 'search',
+        utf8: '1',
+        srsearch: term,
+        origin: '*',
+      }
+    });
+  }
+}
