@@ -11,7 +11,7 @@ export class ConvertPipe implements PipeTransform {
     if(!value)
     {
       return '';
-    }
+    }    
     //console.log(targetunit);
     switch(targetunit){
       case 'km':
