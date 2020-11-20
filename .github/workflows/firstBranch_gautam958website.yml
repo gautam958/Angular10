@@ -1,12 +1,12 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - angular10testings
+name: Build and deploy Node.js app to Azure Web App - gautam958website
 
 on:
   push:
     branches:
-      - main
+      - firstBranch
 
 jobs:
   build-and-deploy:
@@ -18,18 +18,18 @@ jobs:
     - name: Set up Node.js version
       uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: '14.x'
 
     - name: npm install, build, and test
       run: |
         npm install
         npm run build --if-present
         npm run test --if-present
-       
+
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'angular10testings'
+        app-name: 'gautam958website'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_eba37a451f274aedb7a701e296d1cf73 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a4b6fa5f98184163a5537d927bfd1f05 }}
         package: .
