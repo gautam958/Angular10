@@ -1,5 +1,11 @@
 {
     "cSpell.ignoreWords": [
         "killomieters"
-    ]
+    ],
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/95595b8e-3f7e-4ab0-bf18-159b625bcea7/resourceGroups/RS1/providers/Microsoft.Web/sites/gautam958website",
+    "appService.deploySubpath": "dist\\Testapp1"
 }

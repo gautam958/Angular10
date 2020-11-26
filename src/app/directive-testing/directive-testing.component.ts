@@ -11,6 +11,6 @@ export class DirectiveTestingComponent  {
  public name:string = 'Angular';
  public condition:boolean= true;
  public color:string ='green';
- 
+ public isTrue:boolean=true;
 
 }

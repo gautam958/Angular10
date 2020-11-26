@@ -1,0 +1,8 @@
+<p>rxjs works!</p>
+
+<div class="container">
+  <div>
+    <button (click)="onClick()">Fetch New Image</button>
+  </div>
+  <img *ngIf="photoUrl" [src]="photoUrl" />
+</div>

@@ -7,13 +7,15 @@
 </div>
 <div class="angular active"  >
     <p  >Custom IF Structural Directives</p>
-    
+
     <br>
        <h2 *appcustomif ="condition">
         <p  [apperror]="color">
             Hello {{name}}
         </p>
-       </h2>  
+       </h2>
      <!-- <button (click)="condition = !condition">Click</button>   -->
-
+<div *ngIf="isTrue">
+  This is *ngIf example
+</div>
 </div>

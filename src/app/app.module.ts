@@ -1,32 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core'; 
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';  
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import {NotFoundModule} from './not-found/not-found.module';
- 
 
 
 //import { sharedmodules }  from './SharedModules/sharedmodules.module';
- 
+
 @NgModule({
   declarations: [
-    AppComponent, 
+    AppComponent,
       //,apperrordirective,appcustomifdirective
-    
+
   ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
+    ReactiveFormsModule,
+    CommonModule,
     HttpClientModule,
     HomeModule,
     NotFoundModule,
     //sharedmodules,
-    AppRoutingModule, 
+    AppRoutingModule,
     //  Implemented Lazzy Loading for this module
     // TestingModule,
     //  DirectiveTestingModule
-  ], 
+  ],
+  exports:[],
   providers: [],
   bootstrap: [AppComponent]
 })
