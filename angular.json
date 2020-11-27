@@ -25,7 +25,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/pace-js/templates/pace-theme-flash.tmpl.css"
+              "node_modules/pace-js/templates/pace-theme-flat-top.tmpl.css"
             ],
             "scripts": [
               "./node_modules/pace-js/pace.min.js"
@@ -92,7 +92,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/pace-js/templates/pace-theme-flash.tmpl.css"
+              "node_modules/pace-js/templates/pace-theme-flat-top.tmpl.css"
             ],
             "scripts": [
               "./node_modules/pace-js/pace.min.js"
