@@ -1,14 +1,30 @@
-<form [formGroup]= "CardForm" (ngSubmit)="onSubmit()">
-  <app-input label="Name" [control] = "CardForm.get('name')"></app-input>
-  <app-input label="Card Number" [control] = "CardForm.controls.cardNumber"></app-input>
-  <app-input label="Expiration (MM/YY)" [control] = "CardForm.controls.expiration"></app-input>
-  <app-input label="Security Code" [control] = "CardForm.get('securityCode')"></app-input>
-  <button class="button is-primary" [disabled]="CardForm.invalid" type="submit" >Submit</button>
-</form>
-
-<hr>
+<div class="columns"> 
+  <div class="column">
+    <app-card [name]="CardForm.get('name').value" [cardNumber]="CardForm.get('cardNumber').value"
+      [expiration]="CardForm.get('expiration').value"></app-card>
+  </div>
+  <div class="column">
+    <form [formGroup]="CardForm" (ngSubmit)="onSubmit()">
+      <app-input label="Name" [control]="CardForm.get('name')"></app-input>
+      <app-input label="Card Number" [control]="CardForm.controls.cardNumber"></app-input>
+      <div class="columns">
+        <div class="column">
+          <app-input label="Expiration (MM/YY)" [control]="CardForm.controls.expiration"></app-input>
+        </div>
+        <div class="column">
+          <app-input label="Security Code" [control]="CardForm.get('securityCode')"></app-input>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="button is-primary" [disabled]="CardForm.invalid" type="submit">Submit</button>
+        <button class="button is-warning" type="button" (click)="onResetClick()">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- <hr>
 
 <div>Form Contents: {{CardForm.value | json }}</div>
 <div>Form is valid: {{CardForm.valid}}</div>
 <div>Error arround Name: {{CardForm.controls.name.errors | json}}</div>
-<div>Error arround Name: {{CardForm.get("name").errors | json}}</div>
+<div>Error arround Name: {{CardForm.get("name").errors | json}}</div> -->

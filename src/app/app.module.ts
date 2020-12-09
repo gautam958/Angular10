@@ -9,8 +9,6 @@ import { HomeModule } from './home/home.module';
 import {NotFoundModule} from './not-found/not-found.module';
 
 
-//import { sharedmodules }  from './SharedModules/sharedmodules.module';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +22,6 @@ import {NotFoundModule} from './not-found/not-found.module';
     HttpClientModule,
     HomeModule,
     NotFoundModule,
-    //sharedmodules,
     AppRoutingModule,
     //  Implemented Lazzy Loading for this module
     // TestingModule,

@@ -41,4 +41,8 @@ export class ReactiveCardformComponent implements OnInit {
   onSubmit(){
     console.log('Form was submitted');
   }
+  onResetClick()
+  {
+    this.CardForm.reset();
+  }
 }

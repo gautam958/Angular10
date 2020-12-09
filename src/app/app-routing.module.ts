@@ -12,6 +12,8 @@ const routes: Routes = [
  {path:'HttpService',loadChildren:()=>import('./HttpData/wiki-search.module').then(m=>m.WikiSearchModule)},
  {path:'rxjs',loadChildren:()=>import('./rxjs/rxjs.module').then(m=>m.RXJSModule)},
   {path:'reactiveforms',loadChildren:()=>import('./reactiveforms/reactiveforms.module').then(m=>m.ReactiveformsModule)},
+  {path:'reactiveformsmathgame',loadChildren:()=>import('./mathgames-reactiveforms/mathgames-reactiveforms.module').then(m=>m.MathgamesReactiveformsModule)},
+  {path:'templateforms',loadChildren:()=>import('./templateforms/templateforms.module').then(m=>m.TemplateformsModule)},
  {path:'',component:HomeComponent},
  { path: '',   redirectTo: '/home', pathMatch: 'full' },
  {path:'**',component:NotFoundComponent}
