@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import {NotFoundModule} from './not-found/not-found.module';
-
+import { AuthModule } from './EmailApplication/auth/auth.module'; // Eager Loading
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import {NotFoundModule} from './not-found/not-found.module';
     HomeModule,
     NotFoundModule,
     AppRoutingModule,
+    AuthModule
     //  Implemented Lazzy Loading for this module
     // TestingModule,
     //  DirectiveTestingModule

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SigninComponent } from './EmailApplication/auth/signin/signin.component';
+import {SignupComponent} from './EmailApplication/auth/signup/signup.component';
 
 const routes: Routes = [
  // lazzy loading and feature module loading instead of component
@@ -14,8 +16,11 @@ const routes: Routes = [
   {path:'reactiveforms',loadChildren:()=>import('./reactiveforms/reactiveforms.module').then(m=>m.ReactiveformsModule)},
   {path:'reactiveformsmathgame',loadChildren:()=>import('./mathgames-reactiveforms/mathgames-reactiveforms.module').then(m=>m.MathgamesReactiveformsModule)},
   {path:'templateforms',loadChildren:()=>import('./templateforms/templateforms.module').then(m=>m.TemplateformsModule)},
- {path:'',component:HomeComponent},
- { path: '',   redirectTo: '/home', pathMatch: 'full' },
+ //{path:'',component:HomeComponent},
+ //{ path: '',   redirectTo: '/home', pathMatch: 'full' },
+ {path:'',component:SigninComponent},
+ { path: 'signin', component:SigninComponent},
+ {path:'signup',component:SignupComponent},
  {path:'**',component:NotFoundComponent}
 ];
 
