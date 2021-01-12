@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
 import { MatchPassword } from '../validators/MatchPassword';
+import {UniqueUsername} from '../validators/UniqueUsername';
+import { AuthService } from '../../auth/auth.service';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -14,7 +17,7 @@ export class SignupComponent implements OnInit {
       Validators.minLength(3),
       Validators.maxLength(20),
       Validators.pattern(/^[a-z0-9]+$/)
-    ]),
+    ],[this.uniqueUsername.validate]),
     password:new FormControl('',[
       Validators.required,
       Validators.minLength(4),
@@ -27,9 +30,36 @@ export class SignupComponent implements OnInit {
     ])
     },{validators:[this.matchPassword.validate]});
 
-  constructor(private matchPassword:MatchPassword) { }
+  constructor(private matchPassword:MatchPassword,
+    private uniqueUsername:UniqueUsername,
+    private authService:AuthService) { }
 
   ngOnInit(): void {
   }
+  onSubmit(){
+   if(this.authForm.invalid){
+     return;
+   }
 
+   //console.log(this.authForm.value);
+this.authService.signup(this.authForm.value)
+      .subscribe({
+         next:(response)=>{
+           console.log(this);
+         },
+         complete:()=>{
+
+         },
+         error:(err)=>{
+           if(!err.status)
+           {
+             this.authForm.setErrors({noConnection:true});
+           }
+           else{
+             this.authForm.setErrors({unknownError:true});
+           }
+           console.log(err);
+         }
+      });
+    }
 }

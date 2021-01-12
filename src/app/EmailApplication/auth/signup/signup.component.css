@@ -1,1 +1,9 @@
 @import '../../../../../node_modules/semantic-ui-css/semantic.css';
+
+.basic.label {
+margin-bottom: 0.5em;
+}
+
+button{
+  margin-bottom: 0.5em;
+}
