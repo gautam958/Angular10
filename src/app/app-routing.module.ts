@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SigninComponent } from './EmailApplication/auth/signin/signin.component';
 import {SignupComponent} from './EmailApplication/auth/signup/signup.component';
+import { EmailhomeComponent } from './EmailApplication/emailhome/emailhome.component';
 
 const routes: Routes = [
  // lazzy loading and feature module loading instead of component
@@ -18,9 +19,10 @@ const routes: Routes = [
   {path:'templateforms',loadChildren:()=>import('./templateforms/templateforms.module').then(m=>m.TemplateformsModule)},
  //{path:'',component:HomeComponent},
  //{ path: '',   redirectTo: '/home', pathMatch: 'full' },
- {path:'',component:SigninComponent},
- { path: 'signin', component:SigninComponent},
- {path:'signup',component:SignupComponent},
+ {path:'',component:EmailhomeComponent},
+ {path:'EmailHome',component:EmailhomeComponent},
+ {path:'EmailHome/SignIn',component:SigninComponent},
+ {path:'EmailHome/SignUp',component:SignupComponent},
  {path:'**',component:NotFoundComponent}
 ];
 
